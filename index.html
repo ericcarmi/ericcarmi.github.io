@@ -1,52 +1,24 @@
-
 <html lang="en">
-
 <head>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="styles.css">
+
     <meta charset="utf-8">
     <title>eric's website</title>
-    <style>
-        body {
-            background: black;
-            justify-content: center;
-            text-align: center;
-            margin: 0;
-            font-family: monospace;
-            color: rgb(200,100,0);
-            font-size: 26px;
-        }
-        a {
-          cursor: pointer;
-          height: 1em;
-        }
-        hr {
-          border-color: rgb(0,200,0);
-        }
-        .container {
-          display: grid;
-          grid-template-columns: 50% 50%;
-          grid-template-rows: auto;
-          border: 1px solid green;
-          justify-content: center;
-          align-content: center;
-        }
-        .col1 {
-          grid-column: 1;
-          justify-self: center;
-        }
-        .col2 {
-          grid-column: 2;
-          justify-self: center;
-        }
-    </style>
 </head>
 
 <body>
+  <div class="name-image">
+    <img width=100 height=100 src="/branchflowerrgb_black.png"/>
+    <span>eric carmi</span>
+  <a href="/about.html">about me</a>
+  <a href="https://www.github.com/ericcarmi">github</a>
+  <a href="https://www.linkedin.com/in/eric-carmi">linkedin</a>
+</div>
 
-<h1>eric carmi</h1>
-<a href="https://www.github.com/ericcarmi">github</a>
-<a href="https://www.linkedin.com/in/eric-carmi">linkedin</a>
 <hr/>
-
+software made by me that you can try in the browser
+<hr/>
   <div class="container">
     <div class="col1" >
       <a href="/sites/cdt/index.html">Chasing Dragon Tails </a>
@@ -58,7 +30,40 @@
       <br/>
       <video width=400 height=400 controls src="/hexCA-demo.mov"></video>
     </div>
+
+    <div style="grid-column: 1 / span 2" >
+      <a href="/sites/guitar-practice/index.html">Guitar Practice</a>
+      <br/>
+      <img width=800 height=400 src="/gp.png"/>
+      <br/>
+    </div>
+  <br/>
+
   </div>
+
+  <hr/>
+  other software made by me
+  <hr/>
+
+
+  <div style="display: flex; flex-direction: column;">
+      <img style="position: absolute;" width=500 height=300 src="/vm.png"/>
+    <a href="https://github.com/ericcarmi/voice-memo">voice memo - record audio for datasets</a><span>(tauri, rust, svelte)</span >
+    <br/>
+    <a href="https://github.com/ericcarmi/privy">privy - local semantic search</a><span>(electron and tfjs)</span >
+    <br/>
+    <a href="https://github.com/ericcarmi/privy-cli">privy-cli</a><span>(rust and bert.cpp)</span >
+    <br/>
+
+
+
+  </div>
+  <br/>
+
+  <hr/>
+  guitar covers (youtube links)
+  <hr/>
+
 </body>
 
 </html>
