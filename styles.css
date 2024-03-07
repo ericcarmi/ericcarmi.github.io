@@ -1,6 +1,5 @@
 body {
     background: black;
-    justify-content: center;
     text-align: center;
     margin: 0;
     font-family: monospace;
@@ -35,4 +34,23 @@ hr {
   justify-content: start;
   align-items: center;
   text-align: center;
+  width: 100%;
+  height: auto;
+}
+
+.sliding {
+  display: inline;
+  width: 100%;
+  height: 2px;
+  background-size: 200% 100%;
+}
+
+@keyframes slidein {
+  0% {
+    background-position: 0% 0%;
+  }
+
+  to {
+    background-position: 100% 0%;
+  }
 }

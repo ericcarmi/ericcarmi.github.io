@@ -1,69 +1,89 @@
 <html lang="en">
-<head>
-    <link rel="shortcut icon" href="#">
-    <link rel="stylesheet" href="styles.css">
+  <head>
+    <link rel="shortcut icon" href="#" />
+    <link rel="stylesheet" href="styles.css" />
 
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>eric's website</title>
-</head>
+    <script src="jquery.min.js"></script>
+    <script>
+      $(function () {
+        $("#COF").load("COF.html");
+      });
+    </script>
+  </head>
 
-<body>
-  <div class="name-image">
-    <img width=100 height=100 src="/branchflowerrgb_black.png"/>
-    <span>eric carmi</span>
-  <a href="/about.html">about me</a>
-  <a href="https://www.github.com/ericcarmi">github</a>
-  <a href="https://www.linkedin.com/in/eric-carmi">linkedin</a>
-</div>
-
-<hr/>
-software made by me that you can try in the browser
-<hr/>
-  <div class="container">
-    <div class="col1" >
-      <a href="/sites/cdt/cdt.html">Chasing Dragon Tails </a>
-      <br/>
-      <video width=400 height=400 controls src="/cdt-demo.mov"></video>
-    </div>
-    <div class="col2" >
-      <a href="/sites/hexCA/hexCA.html">Hexagonal Cellular Automata</a>
-      <br/>
-      <video width=400 height=400 controls src="/hexCA-demo.mov"></video>
+  <body>
+    <div class="name-image">
+      <img alt="#" width="100" height="100" src="/branchflowerrgb_black.png" />
+      <span>eric carmi</span>
+      <a href="/about.html">about me</a>
+      <a href="https://www.github.com/ericcarmi">github</a>
+      <a href="https://www.linkedin.com/in/eric-carmi">linkedin</a>
     </div>
 
-    <div style="grid-column: 1 / span 2" >
-      <a href="/sites/guitar-practice/guitar-practice.html">Guitar Practice</a>
-      <br/>
-      <img width=800 height=400 src="/gp.png"/>
-      <br/>
+    <hr />
+    software made by me that you can try in the browser
+    <hr />
+    <div class="container">
+      <div class="col1">
+        <a href="/sites/cdt/cdt.html">Chasing Dragon Tails </a>
+        <br />
+        <video width="400" height="400" controls src="/cdt-demo.mov"></video>
+      </div>
+      <div class="col2">
+        <a href="/sites/hexCA/hexCA.html">Hexagonal Cellular Automata</a>
+        <br />
+        <video width="400" height="400" controls src="/hexCA-demo.mov"></video>
+      </div>
+
+      <div style="grid-column: 1 ">
+        <a href="/sites/guitar-practice/guitar-practice.html">Guitar Practice</a
+        >
+        <br />
+        <img alt="##" width="800" height="400" src="/gp.png" />
+        <br />
+      </div>
+
+      <div style="grid-column: 2; ">
+        <span style="width: 100%">
+          interactive circle of fifths in vanilla js, css, html
+        </span>
+        <div style="position: relative; left: 25%; top: 5%" id="COF"></div>
+      </div>
+
+      <br />
     </div>
-  <br/>
 
-  </div>
+    <hr />
+    other software made by me
+    <hr />
 
-  <hr/>
-  other software made by me
-  <hr/>
+    <div style="display: flex; flex-direction: column;">
+      <img
+        alt="###"
+        style="position: absolute;"
+        width="500"
+        height="300"
+        src="/vm.png"
+      />
+      <a href="https://github.com/ericcarmi/voice-memo"
+        >voice memo - record audio for datasets</a
+      ><span>(tauri, rust, svelte)</span>
+      <br />
+      <a href="https://github.com/ericcarmi/privy"
+        >privy - local semantic search</a
+      ><span>(electron and tfjs)</span>
+      <br />
+      <a href="https://github.com/ericcarmi/privy-cli">privy-cli</a><span
+        >(rust and bert.cpp)</span
+      >
+      <br />
+    </div>
+    <br />
 
-
-  <div style="display: flex; flex-direction: column;">
-      <img style="position: absolute;" width=500 height=300 src="/vm.png"/>
-    <a href="https://github.com/ericcarmi/voice-memo">voice memo - record audio for datasets</a><span>(tauri, rust, svelte)</span >
-    <br/>
-    <a href="https://github.com/ericcarmi/privy">privy - local semantic search</a><span>(electron and tfjs)</span >
-    <br/>
-    <a href="https://github.com/ericcarmi/privy-cli">privy-cli</a><span>(rust and bert.cpp)</span >
-    <br/>
-
-
-
-  </div>
-  <br/>
-
-  <hr/>
-  guitar covers (youtube links)
-  <hr/>
-
-</body>
-
+    <hr />
+    guitar covers (youtube links)
+    <hr />
+  </body>
 </html>
