@@ -1,6 +1,6 @@
 <html lang="en">
   <head>
-    <link rel="shortcut icon" href="#" />
+    <link rel="icon" href="/favicon.ico" />
     <link rel="stylesheet" href="styles.css" />
 
     <meta charset="utf-8" />
@@ -27,14 +27,21 @@
     <hr />
     <br/>
     <div class="container">
-      <div class="col1">
+      <div>
         <a href="/sites/cdt/cdt.html">Chasing Dragon Tails </a>
         <br />
         <span>arcade game based on the twin-dragon fractal, programmed with rust (and macroquad engine)</span>
         <br />
         <video width="400" height="400" controls src="/cdt-demo.mov"></video>
       </div>
-      <div class="col2">
+      <div>
+        <a href="/sites/paper-fold/paper-fold.html">Paper Folding</a>
+        <br />
+        <span>controlling the paper folding sequence</span>
+        <br />
+        <img alt="paper-fold-screenshot" width="800" height="400" src="/paperfold-screenshot.png" />
+      </div>
+      <div >
         <a href="/sites/hex-ca/hex-ca.html">Hexagonal Cellular Automata</a>
         <br />
         <span>includes interface for selecting rules visually and a pseudo-Ising model</span>
@@ -42,7 +49,7 @@
         <video width="400" height="400" controls src="/hex-ca-demo.mov"></video>
       </div>
 
-      <div style="grid-column: 1 ">
+      <div >
         <a href="/sites/guitar-practice/guitar-practice.html">Guitar Practice</a
         >
         <br />
@@ -50,11 +57,8 @@
         <br />
       </div>
 
-      <div style="grid-column: 2; ">
-        <span style="width: 100%">
-          interactive circle of fifths in vanilla js, css, html
-        </span>
-        <div style="" id="COF"></div>
+      <div style="display:flex; justify-content: center;">
+        <div id="COF"></div>
       </div>
 
       <br />
@@ -85,6 +89,9 @@
       >
       <br />
     </div>
+    <br />
+    <br />
+    <br />
     <br />
 
     <hr />
