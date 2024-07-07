@@ -2,6 +2,11 @@
   --orange: rgb(200,100,0);
   --sepia1: #f7cf97;
   --sepia5: #6F4C34;
+
+  ::selection {
+    background: var(--sepia1);
+    color: var(--sepia5);
+  }
 }
 body {
     background: black;
@@ -19,8 +24,11 @@ a {
 a:visited {
   color: var(--sepia5);
 }
-a:hover {
+a:visited:hover {
   text-decoration-color: var(--sepia1);
+}
+a:not(visited):hover {
+  text-decoration-color: var(--sepia5);
 }
 
 hr {
