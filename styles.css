@@ -1,17 +1,30 @@
+:root {
+  --orange: rgb(200,100,0);
+  --sepia1: #f7cf97;
+  --sepia5: #6F4C34;
+}
 body {
     background: black;
     text-align: center;
     margin: 0;
     font-family: monospace;
-    color: rgb(200,100,0);
+    color: var(--sepia1);
     font-size: 26px;
 }
 a {
   cursor: pointer;
   padding: 0 1em 0 1em;
+  color: var(--sepia1);
 }
+a:visited {
+  color: var(--sepia5);
+}
+a:hover {
+  text-decoration-color: var(--sepia1);
+}
+
 hr {
-  border-color: rgb(200,100,0);
+  border-color: var(--sepia5);
 }
 .container {
   display: flex;
@@ -51,6 +64,8 @@ hr {
   }
 
   to {
-    background-position: 100% 0%;
+    background-position: 0% 0%;
   }
 }
+  
+  
