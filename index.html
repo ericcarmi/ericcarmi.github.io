@@ -1,104 +1,83 @@
 <html lang="en">
-  <head>
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="stylesheet" href="styles.css" />
 
-    <meta charset="utf-8" />
-    <title>eric's website</title>
-    <script src="jquery.min.js"></script>
-    <script>
-      $(function () {
-        $("#COF").load("COF.html");
-      });
-    </script>
-  </head>
+<head>
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="styles.css" />
 
-  <body>
-    <div class="name-image">
-      <img alt="#" width="100" height="100" src="/favicon.ico" />
-      <span style="margin-left: 1em;">  eric carmi</span>
-      <a href="/about.html">about me</a>
-      <a href="https://www.github.com/ericcarmi">github</a>
+  <meta charset="utf-8" />
+  <title>eric's website</title>
+  <script src="jquery.min.js"></script>
+  <script>
+    $(function () {
+      $("#COF").load("COF.html");
+    });
+  </script>
+</head>
+
+<body>
+  <div class="name-image">
+    <img alt="#" width="100" height="100" src="/favicon.ico" />
+    <span style="margin-left: 1em;"> eric carmi</span>
+    <a href="https://www.github.com/ericcarmi">github</a>
+  </div>
+
+  <hr />
+  <span>software you can try in the browser</span>
+  <hr />
+  <br />
+  <div class="container">
+    <div>
+      <a href="/sites/cdt/cdt.html">Chasing Dragon Tails </a>
+      <br />
+      <span>arcade game based on the twin-dragon fractal, made with macroquad (rust game engine, requires )</span>
+    </div>
+    <img style="margin-top: 10px; border: 1px solid var(--sepia1);" src="/cdt.png" height=400 width=400 />
+    <div>
+      <a href="/sites/paper-fold/paper-fold.html">Paper Folding</a>
+      <br />
+      <span>controlling the paper folding sequence</span>
+    </div>
+    <img alt="paper-fold-screenshot" width="500" height="300" src="/paperfold-screenshot.png" />
+    <div>
+      <a href="/sites/hex-ca/hex-ca.html">Hexagonal Cellular Automata</a>
+      <br />
+      <span>interface for selecting rules visually or using a pseudo-Ising model</span>
+    </div>
+    <div style="width: 100%;">
+      <video width="400" height="400" controls src="/hex-ca-demo.mov"></video>
+      <img src="/hex-ca-rules.png" width="400" height="300" />
     </div>
 
-    
-    <hr/>
-    <span>software you can try in the browser</span>
-    <hr/>
-    <br/>
-    <div class="container">
-      <div>
-        <a href="/sites/cdt/cdt.html">Chasing Dragon Tails </a>
-        <br />
-        <span>arcade game based on the twin-dragon fractal, made with macroquad (rust game engine)</span>
-        <br />
-        <img style="margin-top: 10px; border: 1px solid var(--sepia1);" src="/cdt.png" height=400 width=400/>
-      </div>
-      <div>
-        <a href="/sites/paper-fold/paper-fold.html">Paper Folding</a>
-        <br />
-        <span>controlling the paper folding sequence</span>
-        <br />
-        <img alt="paper-fold-screenshot" width="800" height="400" src="/paperfold-screenshot.png" />
-      </div>
-      <div >
-        <a href="/sites/hex-ca/hex-ca.html">Hexagonal Cellular Automata</a>
-        <br />
-        <span>includes interface for selecting rules visually and a pseudo-Ising model</span>
-        <br />
-        <video width="400" height="400" controls src="/hex-ca-demo.mov"></video>
-        <img src="/hex-ca-rules.png" width="400" height="300"/>
-      </div>
-
-      <div >
-        <a href="/sites/guitar-practice/guitar-practice.html">Guitar Practice</a
-        >
-        <br />
-        <img alt="##" width="800" height="400" src="/gp.png" />
-        <br />
-      </div>
-
-      <div style="display:flex; justify-content: center;">
-        <div id="COF"></div>
-      </div>
-
-      <br />
+    <div>
+      <a href="/sites/guitar-practice/guitar-practice.html">Guitar Practice</a>
+      <div id="COF"></div>
     </div>
+    <img alt="##" width="500" height="300" src="/gp.png" />
+  </div>
 
-    <hr />
-    other software made by me (links to code on github)
-    <hr />
+  <hr />
+  other software made by me (links to code on github)
+  <hr />
 
-    <div style="display: flex; flex-direction: column;">
-      <img
-        alt="###"
-        style="position: absolute;"
-        width="500"
-        height="300"
-        src="/vm.png"
-      />
-      <a href="https://github.com/ericcarmi/voice-memo"
-        >voice memo - record audio for datasets</a
-      ><span>(tauri, rust, svelte)</span>
+  <div style="display: grid; grid-template-columns: 35% 64%; width: 100%">
+    <img alt="###" style="position: absolute;" width="400" height="200" src="/voice-memo.png" />
+    <div style="grid-column: 2;">
+      <a href="https://github.com/ericcarmi/voice-memo">voice memo</a><span> - record short notes or audio for
+        datasets(tauri, rust,
+        svelte)</span>
       <br />
-      <a href="https://github.com/ericcarmi/privy"
-        >privy - local semantic search</a
-      ><span>(electron and tfjs)</span>
-      <br />
-      <a href="https://github.com/ericcarmi/privy-cli">privy-cli</a><span
-        >(rust and bert.cpp)</span
-      >
-      <br />
+      <a href="https://github.com/ericcarmi/privy">privy</a><span> - local semantic search(electron and tfjs)</span>
     </div>
-    <br />
-    <br />
-    <br />
-    <br />
+  </div>
+  <br />
+  <br />
+  <br />
+  <br />
 
-    <hr />
-    guitar covers (youtube links)
-    <hr />
-    coming soon...
-  </body>
+  <hr />
+  guitar covers (youtube links)
+  <hr />
+  coming soon...
+</body>
+
 </html>
-

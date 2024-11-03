@@ -1,160 +1,102 @@
 <script>
   // if this is put on the main page, don't need this event listener
-    const notes = ['b', 'e', 'a', 'd', 'g', 'c', 'f', 'z', 'v', 'y', 'u', 'x']
-  
-    var elements = document.getElementsByClassName("bigcircle");
-    var style = getComputedStyle(document.body);
+  const notes = ['b', 'e', 'a', 'd', 'g', 'c', 'f', 'z', 'v', 'y', 'u', 'x']
 
-    var initialized = false;
+  var elements = document.getElementsByClassName("bigcircle");
+  var style = getComputedStyle(document.body);
 
-    // delay to see it fan out
-    setTimeout(() => {
-      initialized = true;
-      init();
-    }, 0);
+  var initialized = false;
 
-    let rad = style.getPropertyValue("--radius").slice(0, -2) / 2;
-    let font_size = style.getPropertyValue("--text-size").slice(0, -2);
+  // delay to see it fan out
+  setTimeout(() => {
+    initialized = true;
+    init();
+  }, 0);
 
-    let r1 = 20;
-    let r2 = 0;
-    let outer_small_radius = rad - 20;
-    let outer_big_radius = rad - 0;
+  let rad = style.getPropertyValue("--radius").slice(0, -2) / 2;
+  let font_size = style.getPropertyValue("--text-size").slice(0, -2);
 
-    let inner_scale = 0.7;
-    let inner_small_radius = rad / 2 + 0;
-    let inner_big_radius = rad / 2 + 20;
+  let r1 = 20;
+  let r2 = 0;
+  let outer_small_radius = rad - 20;
+  let outer_big_radius = rad - 0;
 
-    for (var i = 0; i < elements.length; i++) {
-      // MOUSE HOVER
-      elements[i].addEventListener("mouseover", function (event) {
-        if (!initialized) {
-          return;
-        }
-        const slices = document.getElementsByClassName("slice");
-        let angle = 15;
-        for (const slice of slices) {
-          // slice.style.backgroundColor = "blue";
-          let x = r1 * Math.cos(((angle - 15) * Math.PI) / 180);
-          let y = r1 * Math.sin(((angle - 15) * Math.PI) / 180);
-          slice.style.transform = `rotate(${angle}deg)`;
-          slice.style.left = `${x}px`;
-          slice.style.top = `${y}px`;
-          angle -= 30;
-        }
+  let inner_scale = 0.7;
+  let inner_small_radius = rad / 2 + 0;
+  let inner_big_radius = rad / 2 + 20;
 
-        const innerslices = document.getElementsByClassName("inner-slice");
-        angle = 15;
-        for (const slice of innerslices) {
-          let x = r1 * Math.cos(((angle - 15) * Math.PI) / 180);
-          let y = r1 * Math.sin(((angle - 15) * Math.PI) / 180);
-          slice.style.transform = `rotate(${angle}deg) scale(${inner_scale})`;
-          slice.style.left = `${x}px`;
-          slice.style.top = `${y}px`;
-          angle -= 30;
-        }
-
-        angle = 15;
-        const labels = document.getElementsByClassName("label");
-        for (const label of labels) {
-          let x =
-            outer_big_radius * Math.cos(((angle - 15) * Math.PI) / 180) +
-            rad -
-            font_size/2;
-          let y =
-            outer_big_radius * Math.sin(((angle - 15) * Math.PI) / 180) +
-            rad -
-            font_size/2;;
-          label.style.left = `${x}px`;
-          label.style.top = `${y}px`;
-          angle -= 30;
-        }
-
-        angle = 15;
-        const innerlabels = document.getElementsByClassName("inner-label");
-        for (const label of innerlabels) {
-          let x =
-            inner_big_radius * Math.cos(((angle - 15) * Math.PI) / 180) +
-            rad -
-            font_size/4;;
-          let y =
-            inner_big_radius * Math.sin(((angle - 15) * Math.PI) / 180) +
-            rad -
-            font_size/2;;
-          // label.style.transform = `rotate(${angle}deg)`
-          label.style.left = `${x}px`;
-          label.style.top = `${y}px`;
-          angle -= 30;
-        }
-      });
-
-      // MOUSE LEAVE
-      elements[i].addEventListener("mouseout", function (event) {
-        if (!initialized) {
-          return;
-        }
-        const slices = document.getElementsByClassName("slice");
-        let angle = 15;
-        for (const slice of slices) {
-          // slice.style.backgroundColor = "";
-          let x = r2 * Math.cos(((angle - 15) * Math.PI) / 180);
-          let y = r2 * Math.sin(((angle - 15) * Math.PI) / 180);
-          slice.style.transform = `rotate(${angle}deg)`;
-          slice.style.left = `${x}px`;
-          slice.style.top = `${y}px`;
-          angle -= 30;
-        }
-
-        const innerslices = document.getElementsByClassName("inner-slice");
-        angle = 15;
-        for (const slice of innerslices) {
-          // slice.style.backgroundColor = "blue";
-          let x = r2 * Math.cos(((angle - 15) * Math.PI) / 180);
-          let y = r2 * Math.sin(((angle - 15) * Math.PI) / 180);
-          slice.style.transform = `rotate(${angle}deg) scale(${inner_scale})`;
-          slice.style.left = `${x}px`;
-          slice.style.top = `${y}px`;
-          angle -= 30;
-        }
-
-        angle = 15;
-        const innerlabels = document.getElementsByClassName("inner-label");
-        for (const label of innerlabels) {
-          let x =
-            inner_small_radius * Math.cos(((angle - 15) * Math.PI) / 180) +
-            rad -
-            font_size/4;;
-          let y =
-            inner_small_radius * Math.sin(((angle - 15) * Math.PI) / 180) +
-            rad -
-            font_size/2;;
-          label.style.left = `${x}px`;
-          label.style.top = `${y}px`;
-          angle -= 30;
-        }
-
-        angle = 15;
-        const labels = document.getElementsByClassName("label");
-        for (const label of labels) {
-          let x =
-            outer_small_radius * Math.cos(((angle - 15) * Math.PI) / 180) +
-            rad -
-            font_size/2;;
-          let y =
-            outer_small_radius * Math.sin(((angle - 15) * Math.PI) / 180) +
-            rad -
-            font_size/2;;
-          label.style.left = `${x}px`;
-          label.style.top = `${y}px`;
-          angle -= 30;
-        }
-      });
-    }
-
-    function init() {
+  for (var i = 0; i < elements.length; i++) {
+    // MOUSE HOVER
+    elements[i].addEventListener("mouseover", function (event) {
+      if (!initialized) {
+        return;
+      }
       const slices = document.getElementsByClassName("slice");
       let angle = 15;
       for (const slice of slices) {
+        // slice.style.backgroundColor = "blue";
+        let x = r1 * Math.cos(((angle - 15) * Math.PI) / 180);
+        let y = r1 * Math.sin(((angle - 15) * Math.PI) / 180);
+        slice.style.transform = `rotate(${angle}deg)`;
+        slice.style.left = `${x}px`;
+        slice.style.top = `${y}px`;
+        angle -= 30;
+      }
+
+      const innerslices = document.getElementsByClassName("inner-slice");
+      angle = 15;
+      for (const slice of innerslices) {
+        let x = r1 * Math.cos(((angle - 15) * Math.PI) / 180);
+        let y = r1 * Math.sin(((angle - 15) * Math.PI) / 180);
+        slice.style.transform = `rotate(${angle}deg) scale(${inner_scale})`;
+        slice.style.left = `${x}px`;
+        slice.style.top = `${y}px`;
+        angle -= 30;
+      }
+
+      angle = 15;
+      const labels = document.getElementsByClassName("label");
+      for (const label of labels) {
+        let x =
+          outer_big_radius * Math.cos(((angle - 15) * Math.PI) / 180) +
+          rad -
+          font_size / 2;
+        let y =
+          outer_big_radius * Math.sin(((angle - 15) * Math.PI) / 180) +
+          rad -
+          font_size / 2;;
+        label.style.left = `${x}px`;
+        label.style.top = `${y}px`;
+        angle -= 30;
+      }
+
+      angle = 15;
+      const innerlabels = document.getElementsByClassName("inner-label");
+      for (const label of innerlabels) {
+        let x =
+          inner_big_radius * Math.cos(((angle - 15) * Math.PI) / 180) +
+          rad -
+          font_size / 4;;
+        let y =
+          inner_big_radius * Math.sin(((angle - 15) * Math.PI) / 180) +
+          rad -
+          font_size / 2;;
+        // label.style.transform = `rotate(${angle}deg)`
+        label.style.left = `${x}px`;
+        label.style.top = `${y}px`;
+        angle -= 30;
+      }
+    });
+
+    // MOUSE LEAVE
+    elements[i].addEventListener("mouseout", function (event) {
+      if (!initialized) {
+        return;
+      }
+      const slices = document.getElementsByClassName("slice");
+      let angle = 15;
+      for (const slice of slices) {
+        // slice.style.backgroundColor = "";
         let x = r2 * Math.cos(((angle - 15) * Math.PI) / 180);
         let y = r2 * Math.sin(((angle - 15) * Math.PI) / 180);
         slice.style.transform = `rotate(${angle}deg)`;
@@ -163,30 +105,12 @@
         angle -= 30;
       }
 
-      angle = 15;
-      const labels = document.getElementsByClassName("label");
-      for (let i = 0; i < labels.length; i++) {
-        let x =
-          outer_small_radius * Math.cos(((angle - 15) * Math.PI) / 180) +
-          rad -
-          font_size/3;;
-        let y =
-          outer_small_radius * Math.sin(((angle - 15) * Math.PI) / 180) +
-          rad -
-          font_size/2;;
-        labels[i].style.left = `${x}px`;
-        labels[i].style.top = `${y}px`;
-        labels[i].textContent = notes[i].toUpperCase();
-        angle -= 30;
-      }
-
-      // INNER SLICES
-
       const innerslices = document.getElementsByClassName("inner-slice");
       angle = 15;
       for (const slice of innerslices) {
-        let x = (r2 / 2) * Math.cos(((angle - 15) * Math.PI) / 180);
-        let y = (r2 / 2) * Math.sin(((angle - 15) * Math.PI) / 180);
+        // slice.style.backgroundColor = "blue";
+        let x = r2 * Math.cos(((angle - 15) * Math.PI) / 180);
+        let y = r2 * Math.sin(((angle - 15) * Math.PI) / 180);
         slice.style.transform = `rotate(${angle}deg) scale(${inner_scale})`;
         slice.style.left = `${x}px`;
         slice.style.top = `${y}px`;
@@ -195,21 +119,97 @@
 
       angle = 15;
       const innerlabels = document.getElementsByClassName("inner-label");
-      for (let i = 0; i < innerlabels.length; i++) {
+      for (const label of innerlabels) {
         let x =
           inner_small_radius * Math.cos(((angle - 15) * Math.PI) / 180) +
           rad -
-          font_size/4;
+          font_size / 4;;
         let y =
           inner_small_radius * Math.sin(((angle - 15) * Math.PI) / 180) +
           rad -
-          font_size/2;;
-        innerlabels[i].style.left = `${x}px`;
-        innerlabels[i].style.top = `${y}px`;
-        innerlabels[i].textContent = notes[(i + 3) % 12].toUpperCase();
+          font_size / 2;;
+        label.style.left = `${x}px`;
+        label.style.top = `${y}px`;
         angle -= 30;
       }
+
+      angle = 15;
+      const labels = document.getElementsByClassName("label");
+      for (const label of labels) {
+        let x =
+          outer_small_radius * Math.cos(((angle - 15) * Math.PI) / 180) +
+          rad -
+          font_size / 2;;
+        let y =
+          outer_small_radius * Math.sin(((angle - 15) * Math.PI) / 180) +
+          rad -
+          font_size / 2;;
+        label.style.left = `${x}px`;
+        label.style.top = `${y}px`;
+        angle -= 30;
+      }
+    });
+  }
+
+  function init() {
+    const slices = document.getElementsByClassName("slice");
+    let angle = 15;
+    for (const slice of slices) {
+      let x = r2 * Math.cos(((angle - 15) * Math.PI) / 180);
+      let y = r2 * Math.sin(((angle - 15) * Math.PI) / 180);
+      slice.style.transform = `rotate(${angle}deg)`;
+      slice.style.left = `${x}px`;
+      slice.style.top = `${y}px`;
+      angle -= 30;
     }
+
+    angle = 15;
+    const labels = document.getElementsByClassName("label");
+    for (let i = 0; i < labels.length; i++) {
+      let x =
+        outer_small_radius * Math.cos(((angle - 15) * Math.PI) / 180) +
+        rad -
+        font_size / 3;;
+      let y =
+        outer_small_radius * Math.sin(((angle - 15) * Math.PI) / 180) +
+        rad -
+        font_size / 2;;
+      labels[i].style.left = `${x}px`;
+      labels[i].style.top = `${y}px`;
+      labels[i].textContent = notes[i].toUpperCase();
+      angle -= 30;
+    }
+
+    // INNER SLICES
+
+    const innerslices = document.getElementsByClassName("inner-slice");
+    angle = 15;
+    for (const slice of innerslices) {
+      let x = (r2 / 2) * Math.cos(((angle - 15) * Math.PI) / 180);
+      let y = (r2 / 2) * Math.sin(((angle - 15) * Math.PI) / 180);
+      slice.style.transform = `rotate(${angle}deg) scale(${inner_scale})`;
+      slice.style.left = `${x}px`;
+      slice.style.top = `${y}px`;
+      angle -= 30;
+    }
+
+    angle = 15;
+    const innerlabels = document.getElementsByClassName("inner-label");
+    for (let i = 0; i < innerlabels.length; i++) {
+      let x =
+        inner_small_radius * Math.cos(((angle - 15) * Math.PI) / 180) +
+        rad -
+        font_size / 4;
+      let y =
+        inner_small_radius * Math.sin(((angle - 15) * Math.PI) / 180) +
+        rad -
+        font_size / 2;;
+      innerlabels[i].style.left = `${x}px`;
+      innerlabels[i].style.top = `${y}px`;
+      innerlabels[i].textContent = notes[(i + 3) % 12].toUpperCase();
+      angle -= 30;
+    }
+  }
 </script>
 
 <div class="circle-of-fifths">
@@ -316,7 +316,7 @@
 
 <style>
   :root {
-    --radius: 400px;
+    --radius: 300px;
     --transition-time: 0.44s;
     --text-size: 12px;
   }
@@ -366,22 +366,18 @@
   }
 
   .slicewrap .slice {
-    background: linear-gradient(
-      0deg,
-      rgb(50, 50, 50) 0%,
-      var(--sepia1) 50%,
-      rgb(50, 50, 50) 100%
-    );
+    background: linear-gradient(0deg,
+        rgb(50, 50, 50) 0%,
+        var(--sepia1) 50%,
+        rgb(50, 50, 50) 100%);
     background-size: 100% 200%;
   }
 
   .slicewrap .inner-slice {
-    background: linear-gradient(
-      0deg,
-      rgb(50, 50, 50) 0%,
-      var(--sepia5) 50%,
-      rgb(50, 50, 50) 100%
-    );
+    background: linear-gradient(0deg,
+        rgb(50, 50, 50) 0%,
+        var(--sepia5) 50%,
+        rgb(50, 50, 50) 100%);
     background-size: 100% 200%;
   }
 
@@ -408,11 +404,9 @@
     position: absolute;
     transition: all var(--transition-time);
     transform: scale(0.1);
-    background: linear-gradient(
-      0deg,
-      rgb(0, 0, 100) 0%,
-      rgb(50, 50, 50) 50%,
-      rgb(0, 0, 100) 100%
-    );
+    background: linear-gradient(0deg,
+        rgb(0, 0, 100) 0%,
+        rgb(50, 50, 50) 50%,
+        rgb(0, 0, 100) 100%);
   }
 </style>

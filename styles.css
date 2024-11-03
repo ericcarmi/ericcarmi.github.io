@@ -1,5 +1,5 @@
 :root {
-  --orange: rgb(200,100,0);
+  --orange: rgb(200, 100, 0);
   --sepia1: #f7cf97;
   --sepia5: #6F4C34;
 
@@ -8,25 +8,30 @@
     color: var(--sepia5);
   }
 }
+
 body {
-    background: black;
-    text-align: center;
-    margin: 0;
-    font-family: monospace;
-    color: var(--sepia1);
-    font-size: 26px;
+  background: black;
+  text-align: center;
+  margin: 0;
+  font-family: monospace;
+  color: var(--sepia1);
+  font-size: 26px;
 }
+
 a {
   cursor: pointer;
   padding: 0 1em 0 1em;
   color: var(--sepia1);
 }
+
 a:visited {
   color: var(--sepia5);
 }
+
 a:visited:hover {
   text-decoration-color: var(--sepia1);
 }
+
 a:not(visited):hover {
   text-decoration-color: var(--sepia5);
 }
@@ -34,17 +39,24 @@ a:not(visited):hover {
 hr {
   border-color: var(--sepia5);
 }
+
 .container {
-  display: flex;
-  gap: 3em;
+  display: grid;
+  grid-template-columns: 40% 50%;
+  gap: 1em;
   flex-direction: column;
   justify-content: center;
   align-content: center;
+  justify-items: center;
+  align-items: center;
 }
+
+
 .col1 {
   grid-column: 1;
   justify-self: center;
 }
+
 .col2 {
   grid-column: 2;
   justify-self: center;
@@ -75,5 +87,3 @@ hr {
     background-position: 0% 0%;
   }
 }
-  
-  
