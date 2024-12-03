@@ -1,0 +1,49 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>chasing dragon tails</title>
+  <style>
+    body {
+      background: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    canvas {
+      margin: 0px;
+      padding: 0px;
+      width: 1192px;
+      height: 952px;
+      display: flex;
+      border: 1px solid white;
+    }
+
+    p {
+      color: white;
+      font-size: 16px;
+      width: 250px;
+      position: absolute;
+      bottom: 0px;
+      left: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="glcanvas" tabindex='1'></canvas>
+  <!-- Minified and statically hosted version of https://github.com/not-fl3/macroquad/blob/master/js/mq_js_bundle.js -->
+  <script src="https://not-fl3.github.io/miniquad-samples/mq_js_bundle.js"></script>
+
+  <script>
+// const isMobileDevice = /Mobi/i.test(window.navigator.userAgent)
+// console.log(isMobileDevice);
+
+
+  </script>
+
+  <script>load("/cdt/chasing-dragon-tails.wasm");</script> <!-- Your compiled wasm file -->
+</body>
+
+</html>

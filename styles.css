@@ -64,11 +64,9 @@ hr {
 
 .name-image {
   display: flex;
-  justify-content: start;
   align-items: center;
-  text-align: center;
+  justify-content: space-between;
   width: 100%;
-  height: auto;
 }
 
 .sliding {
