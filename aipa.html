@@ -1,0 +1,68 @@
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="styles.css" />
+	<title>aipa</title>
+</head>
+
+<body>
+
+	<div class="container" style="text-align: left;">
+		<div>
+			<h1>FEATURES</h1>
+			<li>
+				background/foreground removal
+			</li>
+			<li>
+				generate images with prompts
+			</li>
+			<li>
+				inpaint part of an image with a mask and a prompt
+			</li>
+			<li>
+				segment an image into a mask by clicking on objects
+			</li>
+			<li>
+				edit the AI generated masks, make your own, add transparency or color layers
+			</li>
+			<li>
+				desktop application
+			</li>
+		</div>
+		<video width="100%" height="500" controls src="/lighthouse-2.mov"></video>
+
+		<div style="grid-column: 1 / span 2; text-align: left;">
+			<li>Background/foreground removal is built-in, no subscriptions or internet required</li>
+			<li>Segmentation using one or more points requires a local server (have not seen APIs that offer this)</li>
+			<li>Inpainting and image generation can be done with a local server or by using your stability AI api key</li>
+
+		</div>
+
+
+		<p>
+			The foreground/background can be removed or they can be auto-filled with a mask, making it fast to edit with
+			inpainting.
+
+			<br />
+			<br />
+
+			Depending on the parameters, inpainting can benefit from manually extending or removing parts of the
+			generated mask, which can be
+			done with the adjustable brush.
+
+		</p>
+		<video width="100%" height="500" controls src="/aipa-demo1.mov"></video>
+		<p>
+
+		</p>
+
+
+
+		<video width="100%" height="500" controls src="/aipa-demo2.mov"></video>
+
+	</div>
+
+</body>
+
+</html>
