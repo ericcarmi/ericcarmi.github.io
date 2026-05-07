@@ -1,27 +1,48 @@
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
   <link rel="icon" href="/favicon.ico" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="/styles.css" />
 
   <meta charset="utf-8" />
-  <title>ec</title>
+  <title>the folding lab</title>
   <script src="jquery.min.js"></script>
   <script>
+    let mode = "dark"
     $(function () {
       $("#COF").load("COF.html");
     });
+
+    function change_mode() {
+      if (mode == "dark") {
+        mode = "light";
+        document.getElementsByTagName("html")[0].setAttribute("data-theme", mode);
+        document.getElementById("mode-button").innerHTML = mode;
+
+      }
+      else if (mode == "light") {
+        mode = "dark";
+        document.getElementsByTagName("html")[0].setAttribute("data-theme", mode);
+        document.getElementById("mode-button").innerHTML = mode;
+      }
+
+    }
   </script>
 </head>
 
 <body>
   <div class="name-image">
-    <img alt="#" width="120" height="120" src="/favicon.ico" style="float: left" />
-    <a href="/about.html">about</a>
+    <img alt="chain" height="120" src="/2e.png" />
+    <img alt="chain" height="120" src="/3e.png" />
+    <img alt="chain" height="120" src="/4e.png" />
+    <img alt="chain" height="120" src="/5e.png" />
+    <img alt="chain" height="120" src="/1e.png" />
+    <div style="display:flex;flex-direction:column;align-items:center;gap:1rem">
+      <button id="mode-button" onclick="change_mode()">dark</button>
+      <a href="/about.html">about</a>
+    </div>
   </div>
 
-  <hr />
-  <span>software you can try in the browser</span>
   <hr />
   <br />
   <div class="container">
@@ -54,24 +75,11 @@
     <img alt="##" width="500" height="300" src="/gp.png" />
   </div>
 
-  <hr />
-  other software (links to code on github)
-  <hr />
+  <br />
+  <br />
+  <br />
+  <br />
 
-  <div style="display: grid; grid-template-columns: auto auto; width: 100%; text-align: center; gap: 5px 0">
-    <div>
-      <a href="https://github.com/ericcarmi/voice-memo">voice memo</a>
-      <br /><span>create labeled audio for
-        datasets</span>
-    </div>
-    <img alt="###" width="400" height="150" src="/voice-memo.png" />
-    <div>
-      <a href="/aipa.html" title="click for more demo videos">AIPA (coming soon)</a>
-      <br />
-      <span>AI paint application</span>
-    </div>
-    <video width="50%" height="500" controls src="/lighthouse-2.mov"></video>
-  </div>
 </body>
 
 </html>

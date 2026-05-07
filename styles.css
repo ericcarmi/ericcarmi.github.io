@@ -1,43 +1,119 @@
 :root {
-  --orange: rgb(200, 100, 0);
+  --orange: rgb(220, 100, 0);
+  --sepia0: #EED2C6;
   --sepia1: #f7cf97;
+  --sepia3: #A48373;
   --sepia5: #6F4C34;
+  --sepia6: #3c2920;
+
 
   ::selection {
-    background: var(--sepia1);
-    color: var(--sepia5);
+    background: var(--sepia5);
+    color: var(--sepia1);
   }
 }
 
+[data-theme="dark"] {
+  --background: var(--sepia3);
+  --border: var(--sepia1);
+  --text: var(--sepia0);
+
+  body {
+    background: var(--sepia5);
+    color: var(--text);
+  }
+
+  button {
+    background: var(--background);
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+
+  button:hover {
+    color: var(--orange)
+  }
+
+  a {
+    color: var(--sepia1);
+  }
+
+  a:visited {
+    color: var(--sepia3);
+  }
+
+  a:visited:hover {
+    text-decoration-color: var(--orange);
+  }
+
+  a:not(visited):hover {
+    text-decoration-color: var(--orange);
+  }
+
+  hr {
+    border-color: var(--sepia3);
+  }
+
+}
+
+[data-theme="light"] {
+  --background: var(--sepia0);
+  --border: var(--sepia5);
+  --text: var(--sepia6);
+
+  body {
+    background: var(--sepia0);
+    color: var(--text);
+  }
+
+  button {
+    background: var(--background);
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+
+  button:hover {
+    color: var(--orange)
+  }
+
+  a {
+    color: var(--sepia5);
+  }
+
+  a:visited {
+    color: var(--sepia3);
+  }
+
+  a:visited:hover {
+    text-decoration-color: var(--orange);
+  }
+
+  a:not(visited):hover {
+    text-decoration-color: var(--orange);
+  }
+
+  hr {
+    border-color: var(--sepia3);
+  }
+
+}
+
+button {
+  width: max-content;
+  padding: 0.25rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
 body {
-  background: black;
   text-align: center;
   margin: 0;
   font-family: monospace;
-  color: var(--sepia1);
   font-size: 26px;
 }
 
 a {
   cursor: pointer;
   padding: 0 1em 0 1em;
-  color: var(--sepia1);
-}
-
-a:visited {
-  color: var(--sepia5);
-}
-
-a:visited:hover {
-  text-decoration-color: var(--sepia1);
-}
-
-a:not(visited):hover {
-  text-decoration-color: var(--sepia5);
-}
-
-hr {
-  border-color: var(--sepia5);
 }
 
 .container {
@@ -67,21 +143,4 @@ hr {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-}
-
-.sliding {
-  display: inline;
-  width: 100%;
-  height: 2px;
-  background-size: 200% 100%;
-}
-
-@keyframes slidein {
-  0% {
-    background-position: 0% 0%;
-  }
-
-  to {
-    background-position: 0% 0%;
-  }
 }
