@@ -17,9 +17,10 @@
   --background: var(--sepia3);
   --border: var(--sepia1);
   --text: var(--sepia0);
+  --accent: var(--orange);
 
   body {
-    background: var(--sepia5);
+    background: var(--sepia6);
     color: var(--text);
   }
 
@@ -50,7 +51,7 @@
   }
 
   hr {
-    border-color: var(--sepia3);
+    border-color: var(--sepia1);
   }
 
 }
@@ -59,6 +60,7 @@
   --background: var(--sepia0);
   --border: var(--sepia5);
   --text: var(--sepia6);
+  --accent: var(--orange);
 
   body {
     background: var(--sepia0);
@@ -97,6 +99,22 @@
 
 }
 
+.blog-wrapper {
+  text-align: left;
+  width: 100%;
+
+  h1,
+  h2,
+  h3 {
+    color: var(--accent);
+  }
+
+  h1,
+  h2 {
+    text-align: center;
+  }
+}
+
 button {
   width: max-content;
   padding: 0.25rem;
@@ -107,7 +125,7 @@ button {
 body {
   text-align: center;
   margin: 0;
-  font-family: monospace;
+  font-family: Helvetica;
   font-size: 26px;
 }
 
@@ -140,7 +158,12 @@ a {
 
 .name-image {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   width: 100%;
+}
+
+hr {
+  width: 99%;
 }

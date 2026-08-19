@@ -7,61 +7,35 @@
   <meta charset="utf-8" />
   <title>the folding lab</title>
   <script src="jquery.min.js"></script>
+  <script type="module" src="./imports.js"></script>
   <script>
-    let mode = "dark"
     $(function () {
       $("#COF").load("COF.html");
     });
-
-    function change_mode() {
-      if (mode == "dark") {
-        mode = "light";
-        document.getElementsByTagName("html")[0].setAttribute("data-theme", mode);
-        document.getElementById("mode-button").innerHTML = mode;
-
-      }
-      else if (mode == "light") {
-        mode = "dark";
-        document.getElementsByTagName("html")[0].setAttribute("data-theme", mode);
-        document.getElementById("mode-button").innerHTML = mode;
-      }
-
-    }
   </script>
 </head>
 
 <body>
-  <div class="name-image">
-    <img alt="chain" height="120" src="/2e.png" />
-    <img alt="chain" height="120" src="/3e.png" />
-    <img alt="chain" height="120" src="/4e.png" />
-    <img alt="chain" height="120" src="/5e.png" />
-    <img alt="chain" height="120" src="/1e.png" />
-    <div style="display:flex;flex-direction:column;align-items:center;gap:1rem">
-      <button id="mode-button" onclick="change_mode()">dark</button>
-      <a href="/about.html">about</a>
-    </div>
-  </div>
-
-  <hr />
+  <tfl-header />
   <br />
   <div class="container">
     <div>
       <a href="/chasing-dragon-tails.html" title="click to play the game">Chasing Dragon Tails</a>
       <br />
-      <span>arcade game based on the twin-dragon fractal (requires browser with wasm support)</span>
+      <span>arcade game based on the twin-dragon fractal <br />(requires browser with wasm support)</span>
     </div>
     <img style="margin-top: 10px; border: 1px solid var(--sepia1);" src="/cdt.png" height=400 width=400 />
     <div>
       <a href="/paper-fold.html">Paper Folding</a>
       <br />
-      <span>controlling the paper folding sequence (requires browser with wasm support)</tpan>
+      <span>controlling the paper folding sequence <br />(requires browser with wasm support)</tpan>
     </div>
     <img alt="paper-fold-screenshot" width="500" height="300" src="/paperfold-screenshot.png" />
     <div>
       <a href="/hex-ca/hex-ca.html">Hexagonal Cellular Automata</a>
       <br />
-      <span>interface for selecting rules visually or using a pseudo-Ising model</span>
+      <span>interface for selecting rules visually, upper right hexagons in each cell are clickable to set output, the
+        others the state of center with respect to neighbors, can also simulate a pseudo-Ising model</span>
     </div>
     <div style="width: 100%;">
       <video width="400" height="400" controls src="/hex-ca-demo.mov"></video>
@@ -70,15 +44,13 @@
 
     <div>
       <a href="/guitar-practice/guitar-practice.html">Guitar Practice</a>
-      <div id="COF"></div>
+      <br />
+      <span>old react app, inline circle of fifths in pure js below</span>
+      <div style="display:flex;justify-content:center;" id="COF"></div>
     </div>
     <img alt="##" width="500" height="300" src="/gp.png" />
   </div>
 
-  <br />
-  <br />
-  <br />
-  <br />
 
 </body>
 
